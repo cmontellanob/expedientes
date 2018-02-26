@@ -5,6 +5,11 @@ class Expediente {
     private $partes = array();
     private $actuados = array();
  
+    function __construct($tipoproceso,$demandante)
+    {
+      $this->tipoproceso=$tipoproceso;
+      $this->addparte($demandante);
+    } 
     public function addParte($parte) { 
         $this->partes[]=$parte; 
     }
@@ -39,8 +44,8 @@ abstract class expedienteBuilder {
         return $this->expediente; 
     }
     
-    public function crearNuevoExpediente() { 
-        $this->expediente = new Expediente(); 
+    public function crearNuevoExpediente($tipoproceso,$demandante) { 
+        $this->expediente = new Expediente($tipoproceso,$demandante); 
     }
  
     abstract public function buildPartes();
@@ -61,7 +66,7 @@ class expedientePenalBuilder extends expedienteBuilder {
     }
     public function buildTipoProceso()
     {
-    $this->expediente->setTipoProceso('Delito Publico');
+   
     }
     public function buildActuados()
     {
@@ -83,7 +88,7 @@ class expedienteCivilBuilder extends expedienteBuilder {
     }
     public function buildTipoProceso()
     {
-    $this->expediente->setTipoProceso('Ejecutivo');
+    
     }
     public function buildActuados()
     {
@@ -102,8 +107,8 @@ class Plataforma {
         return $this->expedienteBuilder->getExpediente(); 
     }
  
-    public function crearNuevoExpediente() {
-       $this->expedienteBuilder->crearNuevoExpediente();
+    public function construirExpediente($tipoproceso,$demandante) {
+       $this->expedienteBuilder->crearNuevoExpediente($tipoproceso,$demandante);
        $this->expedienteBuilder->buildPartes();
        $this->expedienteBuilder->buildMateria();
        $this->expedienteBuilder->buildTipoProceso();
