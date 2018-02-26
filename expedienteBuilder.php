@@ -1,14 +1,14 @@
 <?php
-use expediente;
+include ("expediente.php");
 abstract class expedienteBuilder {
     protected $expediente;
  
-    public getExpediente() { 
+    public function getExpediente() { 
         return $this->expediente; 
     }
     
-    public crearNuevoExpediente() { 
-        $this->expediente = new expediente(); 
+    public function crearNuevoExpediente() { 
+        $this->expediente = new Expediente(); 
     }
  
     abstract public function buildPartes();

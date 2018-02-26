@@ -1,7 +1,7 @@
 <?php
-use expedienteBuilder;
+include("expedienteBuilder.php");
 
-public class expedienteCivilBuilder extends expedienteBuilder {
+class expedienteCivilBuilder extends expedienteBuilder {
     public function  buildPartes()
     {
     	$this->expediente->addParte('Ministerio Publico');

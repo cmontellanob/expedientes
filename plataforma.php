@@ -1,10 +1,7 @@
 <?php
-
-
-public class Plataforma {
+class Plataforma {
     private $expedienteBuilder;
- 
-    public function setExpedienteBuilder( $eb) { 
+     public function setExpedienteBuilder( $eb) { 
         $this->expedienteBuilder = $eb; 
     }
     
