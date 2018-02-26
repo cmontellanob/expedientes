@@ -1,8 +1,9 @@
 <?php 
+
     class Expediente {
-    private $partes = array();
     private $materia;
     private $tipoproceso;
+    private $partes = array();
     private $actuados = array();
  
     public function addParte($parte) { 
@@ -18,6 +19,16 @@
 
     public function addActuado($actuado) { 
         $this->atuado[]= $actuado; 
+ 
+    }
+    public function toString() {
+        echo "expediente<br/>";
+        echo "partes<br/>";
+        foreach ($this->partes as $parte)
+            echo $parte."<br/>";
+                echo "partes<br/>";
+        foreach ($this->actuados as $actuado)
+            echo $actuado."<br/>";;
     }
 }
 ?>

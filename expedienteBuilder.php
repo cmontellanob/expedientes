@@ -1,4 +1,5 @@
 <?php
+use expediente;
 abstract class expedienteBuilder {
     protected $expediente;
  

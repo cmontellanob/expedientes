@@ -1,5 +1,7 @@
 <?php
-public class expedienteCivilBuilder extends expediente {
+use expedienteBuilder;
+
+public class expedienteCivilBuilder extends expedienteBuilder {
     public function  buildPartes()
     {
     	//No se inicializa conninguna parte por defecto
