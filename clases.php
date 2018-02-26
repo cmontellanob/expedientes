@@ -66,6 +66,8 @@ class expedientePenalBuilder extends expedienteBuilder {
     public function buildActuados()
     {
        $this->expediente->addActuado('Inicio de la Investigacion');
+       $this->expediente->addActuado('Computo de Plazo');
+
 
     }
 }
